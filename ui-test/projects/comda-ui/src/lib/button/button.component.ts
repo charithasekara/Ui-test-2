@@ -9,7 +9,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ButtonComponent {
   // Input properties
   @Input() placeholder: string = ''; // The placeholder text of the button
-  @Input() label: string = 'Button'; // The label text of the button
+  @Input() buttonText: string = 'Button'; // The button text
+  @Input() disabled: boolean = false; // The disabled state of the button
+  @Input() icon: string = ''; // The icon of the button
+  @Input() iconPosition: 'left' | 'right' = 'left'; // The position of the icon
+  @Input() size: 'small' | 'medium' | 'large' = 'medium'; // The size of the button
 
   // Output event
   @Output() click = new EventEmitter<void>(); // The click event of the button
@@ -18,6 +22,8 @@ export class ButtonComponent {
 
   // Method to emit the click event
   onClick() {
-    this.click.emit();
+    if (!this.disabled) {
+      this.click.emit();
+    }
   }
 }
