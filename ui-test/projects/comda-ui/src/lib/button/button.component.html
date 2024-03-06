@@ -1,6 +1,7 @@
 <!-- button.component.html -->
-<button type="button" class="btn {{ size }}" [class.disabled]="disabled" (click)="onClick()">
-  <i *ngIf="icon && iconPosition === 'left'" class="{{ icon }}"></i>
+<button type="button" class="btn {{ size }} {{ iconPosition === 'left' ? 'icon-left' : '' }}" [class.disabled]="disabled" (click)="onClick()" [style.fontSize.px]="getFontSize()" [style.backgroundColor]="btnColor" [style.color]="txtColor">
+  <span class="icon-container">
+    <ng-content></ng-content>
+  </span>
   {{ buttonText }}
-  <i *ngIf="icon && iconPosition === 'right'" class="{{ icon }}"></i>
 </button>

@@ -4,11 +4,25 @@
   border-radius: 16px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   transition-duration: 0.4s;
   cursor: pointer;
   background-color: #007BFF; /* Bootstrap primary color */
   color: white; /* White color for the text */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-container {
+  order: 1; /* By default, place the icon on the right */
+  padding-left: 10px;
+  font-size: inherit; /* The icon will inherit the font size of the button */
+}
+
+.btn.icon-left .icon-container {
+  order: -1; /* If the iconPosition is 'left', place the icon on the left */
+  padding-right: 10px;
+  padding-left: 0px;
 }
 
 .btn.small {
