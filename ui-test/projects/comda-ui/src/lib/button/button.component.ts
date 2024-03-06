@@ -11,7 +11,7 @@ export class ButtonComponent {
   @Input() buttonText: string = ''; // The button text
   @Input() disabled: boolean = false; // The disabled state of the button
   @Input() icon: string = ''; // The icon of the button
-  @Input() iconPosition: 'left' | 'right' = 'left'; // The position of the icon
+  @Input() iconPosition: 'left' | 'right' | '' = ''; // The position of the icon
   @Input() size: 'small' | 'medium' | 'large' = 'medium'; // The size of the button
   @Input() btnColor: string = '#007BFF'; // The color of the button
   @Input() txtColor: string = 'white'; // The color of the button text
@@ -33,11 +33,11 @@ export class ButtonComponent {
       case 'small':
         return 12;
       case 'medium':
-        return 16;
+        return 14;
       case 'large':
-        return 20;
-      default:
         return 16;
+      default:
+        return 14;
     }
   }
 }

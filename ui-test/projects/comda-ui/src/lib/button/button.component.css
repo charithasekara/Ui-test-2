@@ -1,13 +1,16 @@
 /* button.component.css */
+
+/* Original styles (from your provided CSS) */
 .btn {
   border: none;
-  border-radius: 16px;
+  border-radius: 14px;
   text-align: center;
   text-decoration: none;
   display: flex;
   transition-duration: 0.4s;
   cursor: pointer;
-  background-color: #007BFF; /* Bootstrap primary color */
+  background-color: #0B7BDC; /* Bootstrap primary color */
+  border: 1px solid  #0B7BDC;
   color: white; /* White color for the text */
   justify-content: space-between;
   align-items: center;
@@ -28,30 +31,36 @@
 .btn.small {
   font-size: 12px;
   padding: 5px 10px;
+  border-radius: 8px;
 }
 
 .btn.medium {
-  font-size: 16px;
+  font-size: 14px;
   padding: 10px 20px;
+  border-radius: 14px;
 }
 
 .btn.large {
-  font-size: 20px;
-  padding: 15px 30px;
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 20px;
 }
 
+/* New styles (as requested) */
 .btn:hover {
-  background-color: #0056b3; /* Darker shade of primary color */
-  color: white;
+  border: 1.5px solid #0b7bdc; /* Border color same as enable state */
+  background-color: rgba(0, 112, 210, 0.838); /* New background color */
 }
 
-.btn:active {
-  background-color: #004085; /* Even darker shade of primary color */
-  color: white;
+.btn:active{
+  border: 1.5px solid white; /* Border color changes to white */
+  background-color:  #0B7BDC; /* New background color */
+  box-shadow: 0 0 5px  #0B7BDC /* Smooth drop shadow */
 }
 
 .btn.disabled {
-  cursor: not-allowed;
-  background-color: #6c757d; /* Bootstrap secondary color */
-  color: white;
+  background-color: #6c757d; /* Same as enabled color */
+  border: 1px solid #6c757d; /* Border color same as background color */
+  color: rgb(199, 199, 199);
+  filter: brightness(75%);
 }
