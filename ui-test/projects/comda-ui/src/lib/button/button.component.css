@@ -1,31 +1,17 @@
-/* button.component.css */
-
-/* Original styles (from your provided CSS) */
-.btn {
-  border: none;
-  border-radius: 14px;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  background-color: #0B7BDC; /* Bootstrap primary color */
-  border: 1px solid  #0B7BDC;
-  color: white; /* White color for the text */
-  justify-content: space-between;
-  align-items: center;
-}
-
 .icon-container {
   order: 1; /* By default, place the icon on the right */
   padding-left: 10px;
   font-size: inherit; /* The icon will inherit the font size of the button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn.icon-left .icon-container {
   order: -1; /* If the iconPosition is 'left', place the icon on the left */
   padding-right: 10px;
   padding-left: 0px;
+  display: flex;
 }
 
 .btn.small {
@@ -34,7 +20,7 @@
   border-radius: 8px;
 }
 
-.btn.medium {
+.btn.medium  {
   font-size: 14px;
   padding: 10px 20px;
   border-radius: 14px;
@@ -46,21 +32,103 @@
   border-radius: 20px;
 }
 
-/* New styles (as requested) */
-.btn:hover {
-  border: 1.5px solid #0b7bdc; /* Border color same as enable state */
-  background-color: rgba(0, 112, 210, 0.838); /* New background color */
+/* button.small:focus {
+  border: 1px solid #fff;
+  border: 1px solid transparent;
 }
 
-.btn:active{
-  border: 1.5px solid white; /* Border color changes to white */
-  background-color:  #0B7BDC; /* New background color */
-  box-shadow: 0 0 5px  #0B7BDC /* Smooth drop shadow */
+button.medium:focus {
+  border: 1.5px solid #fff;
+  border: 1.5px solid transparent;
 }
 
-.btn.disabled {
-  background-color: #6c757d; /* Same as enabled color */
-  border: 1px solid #6c757d; /* Border color same as background color */
-  color: rgb(199, 199, 199);
-  filter: brightness(75%);
+button.large:focus {
+  border: 2px solid #fff;
+  border: 2px solid transparent;
+} */
+
+button {
+  display: flex;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent; /* Set border color initially to transparent */
+  color: #3498db;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s, border 0.5s, box-shadow 0.5s; /* Add border to the transition */
+  justify-content: center;
+  align-items: center;
 }
+
+button:hover {
+  background-color: #3498db;
+  color: #fff;
+  box-shadow: 0 0 5px #3498db;
+}
+
+/* button:active {
+  transform: scale(0.95);
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
+  border-color: rgb(0, 123, 255);*/
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #3498db;
+  border: 2px solid #fff;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.loading::after {
+  content: "";
+  display: inline-block;
+  border: 2px solid #3498db; /* Set border color for the loading spinner */
+  border-radius: 50%;
+  border-top: 2px solid #fff; /* Adjust border-top color for loading spinner */
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  animation: spin 0.8s linear infinite;
+}
+
+/* @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); } */
+
+/*border radius*/
+
+  .btn.br-0 {
+    border-radius: 8px;
+  }
+
+  .btn.br-1 {
+    border-radius: 10px;
+  }
+
+  .btn.br-2 {
+    border-radius: 12px;
+  }
+
+  .btn.br-3 {
+    border-radius: 14px;
+  }
+
+  .btn.br-4 {
+    border-radius: 16px;
+  }
+
+  .btn.br-5 {
+    border-radius: 18px;
+  }
+
+  .btn.round {
+    border-radius: 24px;
+  }
+
+

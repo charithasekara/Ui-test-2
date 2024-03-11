@@ -1,5 +1,19 @@
 // button.component.ts
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { AfterContentChecked, Directive, ElementRef } from '@angular/core';
+
+@Directive({
+  selector: '[appHasContent]'
+})
+export class HasContentDirective implements AfterContentChecked {
+  hasContent = false;
+
+  ngAfterContentChecked(): void {
+    this.hasContent = !!this.el.nativeElement.innerHTML;
+  }
+
+  constructor(private el: ElementRef) { }
+}
 
 @Component({
   selector: 'comda-ui-button',
@@ -15,6 +29,8 @@ export class ButtonComponent {
   @Input() size: 'small' | 'medium' | 'large' = 'medium'; // The size of the button
   @Input() btnColor: string = '#007BFF'; // The color of the button
   @Input() txtColor: string = 'white'; // The color of the button text
+  @Input() borderRadius: 'br-0' | 'br-1' | 'br-2' | 'br-3' | 'br-4' | 'br-5' | 'round' = 'br-3'; // The border radius of the button
+
 
   // Output event
   @Output() click = new EventEmitter<void>(); // The click event of the button
