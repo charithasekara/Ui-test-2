@@ -18,7 +18,7 @@ export class HasContentDirective implements AfterContentChecked {
 @Component({
   selector: 'comda-ui-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css']
+  styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
   // Input properties

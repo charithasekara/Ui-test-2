@@ -1,0 +1,17 @@
+$button-sizes: (
+  small: (
+    font-size: 12px,
+    padding: 5px 10px,
+    border-radius: 8px
+  ),
+  medium: (
+    font-size: 14px,
+    padding: 10px 20px,
+    border-radius: 14px
+  ),
+  large: (
+    font-size: 16px,
+    padding: 14px 28px,
+    border-radius: 20px
+  )
+);
